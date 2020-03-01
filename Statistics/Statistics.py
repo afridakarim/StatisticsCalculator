@@ -1,6 +1,6 @@
 from Calculator.Calculator import Calculator
 from Statistics.Mean import mean
-from Statistics.Median import Median
+from Statistics.Median import median
 import pprint
 
 
@@ -10,5 +10,5 @@ class Statistics(Calculator):
         return self.result
 
     def median(self, data):
-        self.result = Median(data)
+        self.result = median(data)
         return self.result

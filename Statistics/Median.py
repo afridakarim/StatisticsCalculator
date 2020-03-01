@@ -3,13 +3,13 @@ from Calculator.Division import division
 from Statistics.randomData import random_code
 
 
-def Median(data):
+
+def median(data):
     n = len(data)
-    num = n // 2
+    median = n // 2
     if n % 2 == 0:
-        mid = (data[num] + data[num - 1]) / 2
-        print(data[num])
+        middle = (data[median] + data[median - 1]) / 2
     else:
-        mid = data[num]
-        print(data[mid])
-    return mid
+        middle = data[median]
+
+    return middle
