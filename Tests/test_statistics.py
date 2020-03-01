@@ -25,6 +25,10 @@ class MyTestCase(unittest.TestCase):
         median = self.statistics.median(self.testData0)
         self.assertEqual(median, 2.91)
 
+    def test_mode_calculator(self):
+        mode = self.statistics.mode(self.testData0)
+        self.assertEqual(mode, 1)
+
 
 
 if __name__ == '__main__':
