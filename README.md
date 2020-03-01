@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.com/kaw393939/calculator.svg?branch=master)](https://travis-ci.com/kaw393939/calculator)
-
+[![Build Status](https://travis-ci.org/afridakarim/StatisticsCalculator.svg?branch=master)](https://travis-ci.org/afridakarim/StatisticsCalculator)
 # calculator
 
 # Statistics
