@@ -55,13 +55,13 @@ def random_select():
     rand_list = [10,20,30,40,50,60]
     rand_valueList = random.choices(rand_list,k=4)
     i+=1
-
     rand_value = random.choice(rand_list)
-    randomData1.append(rand_value)
+    #randomData1.append(rand_value)
 
-    #pprint.pprint(randomData1)
-    #pprint.pprint(rand_valueList)
-
+    #pprint.pprint(rand_value)
+    pprint.pprint(rand_valueList)
+    return rand_value
+    return rand_valueList
 def random_select_no_seed():
     random.seed()
     randomData1 = []
