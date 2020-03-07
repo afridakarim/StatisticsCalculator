@@ -4,6 +4,7 @@ from Statistics.Median import median
 from Statistics.Mode import mode
 from Statistics.StandardDev import *
 from Statistics.Variance import *
+from Statistics.MeanAbsDev import meanAbsDev
 
 
 class Statistics(Calculator):
@@ -31,4 +32,8 @@ class Statistics(Calculator):
         return self.result
     def popVar(self,data):
         self.result = popVar(data)
+        return self.result
+
+    def meanAbsDev(self,data):
+        self.result = meanAbsDev(data)
         return self.result

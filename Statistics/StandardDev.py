@@ -1,5 +1,3 @@
-import numpy as np
-from scipy.stats import norm
 import math
 from Statistics.Mean import mean
 from Calculator.Square import square

@@ -5,6 +5,7 @@ from Statistics.Statistics import Statistics
 from Statistics.randomData import *
 from Statistics.StandardDev import *
 from Statistics.Variance import *
+from Statistics.MeanAbsDev import meanAbsDev
 
 class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
@@ -46,7 +47,9 @@ class MyTestCase(unittest.TestCase):
         popVar = self.statistics.popVar(self.testData0)
         self.assertEqual(popVar, 1.435208282940187e+30)
 
-
+    def test_MAD_calculator(self):
+        m_a_d = self.statistics.meanAbsDev(self.testData0)
+        self.assertEqual(m_a_d, 34.49513888888889)
 
 
 if __name__ == '__main__':
