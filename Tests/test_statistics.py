@@ -8,6 +8,8 @@ from Statistics.Variance import *
 from Statistics.MeanAbsDev import meanAbsDev
 from Statistics.ZScores import zValues
 from Statistics.Correlation import correlationCoefficient
+from Statistics.Quartiles import *
+
 class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
         #seed(5)
@@ -74,6 +76,15 @@ class MyTestCase(unittest.TestCase):
         for i in result:
             Result.append(i)
 
+    def quartiles(self):
+        q1 = self.statistics.quart1(self.testData0)
+        self.assertEqual(q1, 60.056499999999995)
+
+        q2 = self.statistics.quart2(self.testData0)
+        self.assertEqual(q2, 73.8845)
+
+        q3 = self.statistics.quart3(self.testData0)
+        self.assertEqual(q3, 80.88450000000001)
 
 if __name__ == '__main__':
     unittest.main()

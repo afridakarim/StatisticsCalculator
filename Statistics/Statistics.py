@@ -7,6 +7,7 @@ from Statistics.Variance import *
 from Statistics.MeanAbsDev import meanAbsDev
 from Statistics.ZScores import *
 from Statistics.Correlation import *
+from Statistics.Quartiles import *
 
 
 class Statistics(Calculator):
@@ -49,4 +50,14 @@ class Statistics(Calculator):
 
     def correlation_coeff(self, data):
         self.result = correlationCoefficient(data)
+        return self.result
+
+    def quart1(self, data):
+        self.result = qrt1(data)
+        return self.result
+    def quart2(self, data):
+        self.result = qrt2(data)
+        return self.result
+    def quart3(self, data):
+        self.result = qrt3(data)
         return self.result
