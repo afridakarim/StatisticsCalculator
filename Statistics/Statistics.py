@@ -4,7 +4,7 @@ from Statistics.Median import median
 from Statistics.Mode import mode
 from Statistics.StandardDev import *
 from Statistics.Variance import *
-from Statistics.MeanAbsDev import meanAbsDev
+from Statistics.MeanAbsDev import *
 from Statistics.ZScores import *
 from Statistics.Correlation import *
 from Statistics.Quartiles import *
@@ -35,6 +35,10 @@ class Statistics(Calculator):
         return self.result
     def popVar(self,data):
         self.result = popVar(data)
+        return self.result
+
+    def meanDev(self,data):
+        self.result = meanDev(data)
         return self.result
 
     def meanAbsDev(self,data):

@@ -5,7 +5,7 @@ from Statistics.Statistics import Statistics
 from Statistics.randomData import *
 from Statistics.StandardDev import *
 from Statistics.Variance import *
-from Statistics.MeanAbsDev import meanAbsDev
+from Statistics.MeanAbsDev import *
 from Statistics.ZScores import zValues
 from Statistics.Correlation import correlationCoefficient
 from Statistics.Quartiles import *
@@ -51,6 +51,10 @@ class MyTestCase(unittest.TestCase):
     def test_popVar_calculator(self):
         popVar = self.statistics.popVar(self.testData0)
         self.assertEqual(popVar, 1.435208282940187e+30)
+
+    def test_MD_calculator(self):
+        m_d = self.statistics.meanDev(self.testData0)
+        self.assertEqual(m_d, -4.736951571734001e-15)
 
     def test_MAD_calculator(self):
         m_a_d = self.statistics.meanAbsDev(self.testData0)
