@@ -22,7 +22,7 @@ def random_code():
 
     rand_one = random.randint(1,50)
     rand_two = round(value,2)
-    pprint.pprint(num_list)
+    #pprint.pprint(num_list)
     return num_list
 
 def random_code_no_seed():
@@ -31,7 +31,7 @@ def random_code_no_seed():
     randomData2 = []
     i = 0
     while i < 6:
-        rand_value = random.randint(1,50)
+        rand_value = random.randint(1,100)
         randomData1.append(rand_value)
         value = random.random()
         rand_value_decimal =round (value, 2)
@@ -59,7 +59,7 @@ def random_select():
     #randomData1.append(rand_value)
 
     #pprint.pprint(rand_value)
-    pprint.pprint(rand_valueList)
+    #pprint.pprint(rand_valueList)
     return rand_value
     return rand_valueList
 def random_select_no_seed():
