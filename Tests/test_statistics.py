@@ -58,21 +58,21 @@ class MyTestCase(unittest.TestCase):
         coeff = self.statistics.correlation_coeff(self.testData0)
         self.assertEqual(coeff,  0.9302924515359432)
 
-''' def test_z_values(self, mainResult=None):
+    def test_z_values(self, mainResult=None):
         mainResults = []
         result = self.statistics.zValues(self.testZ)
 
         for i in result:
-            masterResults.append(i)
+            mainResults.append(i)
 
-        if masterResult == result:
+        if mainResult == result:
             self.assertTrue(True)
 
-    def test_Z_scores(self):
+    def test_z_scores(self):
         Result = []
-        result = self.statistics.Z_scores(self.testZscore)
+        result = self.statistics.zScores(self.testZscore)
         for i in result:
-            Result.append(i)'''
+            Result.append(i)
 
 
 if __name__ == '__main__':
