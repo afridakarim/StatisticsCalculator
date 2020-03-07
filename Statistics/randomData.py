@@ -25,6 +25,28 @@ def random_code():
     #pprint.pprint(num_list)
     return num_list
 
+def random_code2():
+    random.seed(4)
+    randomData1 = []
+    randomData2 = []
+    i = 0
+    while i < 6:
+        rand_value = random.randint(1,100)
+        randomData1.append(rand_value)
+        value = random.random()
+        rand_value_decimal =round (value, 2)
+        randomData2.append(rand_value_decimal)
+        i += 1
+        randomData1.sort()
+        randomData2.sort()
+        num_list = randomData2 + randomData1
+
+
+    rand_one = random.randint(1,50)
+    rand_two = round(value,2)
+    #pprint.pprint(num_list)
+    return num_list
+
 def random_code_no_seed():
     random.seed()
     randomData1 = []

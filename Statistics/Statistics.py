@@ -6,6 +6,7 @@ from Statistics.StandardDev import *
 from Statistics.Variance import *
 from Statistics.MeanAbsDev import meanAbsDev
 from Statistics.ZScores import *
+from Statistics.Correlation import *
 
 
 class Statistics(Calculator):
@@ -44,4 +45,8 @@ class Statistics(Calculator):
         return self.result
     def zScores(self, data):
         self.result = zScores(self.zValues(data))
+        return self.result
+
+    def correlation_coeff(self, data):
+        self.result = correlationCoefficient(data)
         return self.result

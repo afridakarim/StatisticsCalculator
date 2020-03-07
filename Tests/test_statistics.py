@@ -7,7 +7,7 @@ from Statistics.StandardDev import *
 from Statistics.Variance import *
 from Statistics.MeanAbsDev import meanAbsDev
 from Statistics.ZScores import zValues
-
+from Statistics.Correlation import correlationCoefficient
 class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
         #seed(5)
@@ -24,7 +24,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_mean_calculator(self):
         mean = self.statistics.mean(self.testData0)
-        self.assertEqual(mean,30.805833333333336)
+        self.assertEqual(mean,30.805833333333332)
 
     def test_median_calculator(self):
         median = self.statistics.median(self.testData0)
@@ -54,7 +54,11 @@ class MyTestCase(unittest.TestCase):
         m_a_d = self.statistics.meanAbsDev(self.testData0)
         self.assertEqual(m_a_d, 34.49513888888889)
 
-    def test_z_values(self, mainResult=None):
+    def test_corr_coeff(self):
+        coeff = self.statistics.correlation_coeff(self.testData0)
+        self.assertEqual(coeff,  0.9302924515359432)
+
+''' def test_z_values(self, mainResult=None):
         mainResults = []
         result = self.statistics.zValues(self.testZ)
 
@@ -68,8 +72,7 @@ class MyTestCase(unittest.TestCase):
         Result = []
         result = self.statistics.Z_scores(self.testZscore)
         for i in result:
-            Result.append(i)
-
+            Result.append(i)'''
 
 
 if __name__ == '__main__':
