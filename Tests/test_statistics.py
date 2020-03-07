@@ -3,7 +3,8 @@ from numpy.random import seed
 from numpy.random import randint
 from Statistics.Statistics import Statistics
 from Statistics.randomData import *
-
+from Statistics.StandardDev import *
+from Statistics.Variance import *
 
 class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
@@ -19,7 +20,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_mean_calculator(self):
         mean = self.statistics.mean(self.testData0)
-        self.assertEqual(30.81, round(mean,2))
+        self.assertEqual(mean,30.805833333333336)
 
     def test_median_calculator(self):
         median = self.statistics.median(self.testData0)
@@ -28,6 +29,23 @@ class MyTestCase(unittest.TestCase):
     def test_mode_calculator(self):
         mode = self.statistics.mode(self.testData0)
         self.assertEqual(mode, 1)
+
+    def test_stdDevSample_calculator(self):
+        stdDevSample = self.statistics.stdDevSample(self.testData0)
+        self.assertEqual(stdDevSample, 7.452719360031301e+60)
+
+    def test_stdDevPop_calculator(self):
+        stdDevPop = self.statistics.stdDevPop(self.testData0)
+        self.assertEqual(stdDevPop, 2.05982281542012e+60)
+
+    def test_sampleVar_calculator(self):
+        sampleVar = self.statistics.sampleVar(self.testData0)
+        self.assertEqual(sampleVar,2.729966915556176e+30)
+
+    def test_popVar_calculator(self):
+        popVar = self.statistics.popVar(self.testData0)
+        self.assertEqual(popVar, 1.435208282940187e+30)
+
 
 
 
