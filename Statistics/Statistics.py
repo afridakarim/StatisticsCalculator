@@ -5,6 +5,7 @@ from Statistics.Mode import mode
 from Statistics.StandardDev import *
 from Statistics.Variance import *
 from Statistics.MeanAbsDev import meanAbsDev
+from Statistics.ZScores import *
 
 
 class Statistics(Calculator):
@@ -36,4 +37,11 @@ class Statistics(Calculator):
 
     def meanAbsDev(self,data):
         self.result = meanAbsDev(data)
+        return self.result
+
+    def zValues(self,data):
+        self.result = zValues(data)
+        return self.result
+    def zScores(self, data):
+        self.result = zScores(self.zValues(data))
         return self.result

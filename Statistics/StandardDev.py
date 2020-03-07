@@ -1,7 +1,7 @@
 import math
 from Statistics.Mean import mean
 from Calculator.Square import square
-from Statistics.randomData import random_code
+
 
 def StdDevSample(data):
     Sum1 = 0

@@ -6,6 +6,7 @@ from Statistics.randomData import *
 from Statistics.StandardDev import *
 from Statistics.Variance import *
 from Statistics.MeanAbsDev import meanAbsDev
+from Statistics.ZScores import zValues
 
 class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
@@ -15,6 +16,8 @@ class MyTestCase(unittest.TestCase):
         self.testData1 = random_code_no_seed()
         self.testData2 = random_select()
         self.testData3 = random_select_no_seed()
+        self.testZ = zValues(self.testData0)
+        self.testZscore = zValues(self.testData0)
 
     def test_instantiate_calculator(self):
         self.assertIsInstance(self.statistics, Statistics)
@@ -50,6 +53,23 @@ class MyTestCase(unittest.TestCase):
     def test_MAD_calculator(self):
         m_a_d = self.statistics.meanAbsDev(self.testData0)
         self.assertEqual(m_a_d, 34.49513888888889)
+
+    def test_z_values(self, mainResult=None):
+        mainResults = []
+        result = self.statistics.zValues(self.testZ)
+
+        for i in result:
+            masterResults.append(i)
+
+        if masterResult == result:
+            self.assertTrue(True)
+
+    def test_Z_scores(self):
+        Result = []
+        result = self.statistics.Z_scores(self.testZscore)
+        for i in result:
+            Result.append(i)
+
 
 
 if __name__ == '__main__':
