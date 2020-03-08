@@ -8,6 +8,7 @@ from Statistics.MeanAbsDev import *
 from Statistics.ZScores import *
 from Statistics.Correlation import *
 from Statistics.Quartiles import *
+from Statistics.MarginError import marginErr
 
 
 class Statistics(Calculator):
@@ -64,4 +65,8 @@ class Statistics(Calculator):
         return self.result
     def quart3(self, data):
         self.result = qrt3(data)
+        return self.result
+
+    def mErr(self,data):
+        self.result = marginErr(data)
         return self.result

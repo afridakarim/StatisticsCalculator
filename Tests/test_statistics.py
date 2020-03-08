@@ -9,6 +9,8 @@ from Statistics.MeanAbsDev import *
 from Statistics.ZScores import zValues
 from Statistics.Correlation import correlationCoefficient
 from Statistics.Quartiles import *
+from Statistics.MarginError import marginErr
+import pprint
 
 class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
@@ -26,11 +28,11 @@ class MyTestCase(unittest.TestCase):
 
     def test_mean_calculator(self):
         mean = self.statistics.mean(self.testData0)
-        self.assertEqual(mean,30.805833333333332)
+        self.assertEqual(mean,15.7225)
 
     def test_median_calculator(self):
         median = self.statistics.median(self.testData0)
-        self.assertEqual(median, 2.91)
+        self.assertEqual(median, 1.91)
 
     def test_mode_calculator(self):
         mode = self.statistics.mode(self.testData0)
@@ -38,31 +40,31 @@ class MyTestCase(unittest.TestCase):
 
     def test_stdDevSample_calculator(self):
         stdDevSample = self.statistics.stdDevSample(self.testData0)
-        self.assertEqual(stdDevSample, 7.452719360031301e+60)
+        self.assertEqual(stdDevSample, 6.397178746938636e+24)
 
     def test_stdDevPop_calculator(self):
         stdDevPop = self.statistics.stdDevPop(self.testData0)
-        self.assertEqual(stdDevPop, 2.05982281542012e+60)
+        self.assertEqual(stdDevPop, 1.7680868017026143e+24)
 
     def test_sampleVar_calculator(self):
         sampleVar = self.statistics.sampleVar(self.testData0)
-        self.assertEqual(sampleVar,2.729966915556176e+30)
+        self.assertEqual(sampleVar,2529264467575.235)
 
     def test_popVar_calculator(self):
         popVar = self.statistics.popVar(self.testData0)
-        self.assertEqual(popVar, 1.435208282940187e+30)
+        self.assertEqual(popVar, 1329694251210.6362)
 
     def test_MD_calculator(self):
         m_d = self.statistics.meanDev(self.testData0)
-        self.assertEqual(m_d, -4.736951571734001e-15)
+        self.assertEqual(m_d, -1.7763568394002505e-15)
 
     def test_MAD_calculator(self):
         m_a_d = self.statistics.meanAbsDev(self.testData0)
-        self.assertEqual(m_a_d, 34.49513888888889)
+        self.assertEqual(m_a_d, 17.231250000000003)
 
     def test_corr_coeff(self):
         coeff = self.statistics.correlation_coeff(self.testData0)
-        self.assertEqual(coeff,  0.9302924515359432)
+        self.assertEqual(coeff,  0.9302765081681367)
 
     def test_z_values(self, mainResult=None):
         mainResults = []
@@ -89,6 +91,17 @@ class MyTestCase(unittest.TestCase):
 
         q3 = self.statistics.quart3(self.testData0)
         self.assertEqual(q3, 80.88450000000001)
+
+    def marginErr(self):
+        resultList = []
+        result = self.statistics.mErr(self.testData0)
+        for i in result:
+            resultList.append(i)
+        if resultList == result:
+            self.assertTrue(True)
+
+
+
 
 if __name__ == '__main__':
     unittest.main()

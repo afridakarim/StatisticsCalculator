@@ -9,7 +9,7 @@ def random_code():
     randomData2 = []
     i = 0
     while i < 6:
-        rand_value = random.randint(1,100)
+        rand_value = random.randint(1,50)
         randomData1.append(rand_value)
         value = random.random()
         rand_value_decimal =round (value, 2)
