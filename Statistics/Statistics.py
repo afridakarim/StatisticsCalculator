@@ -9,6 +9,7 @@ from Statistics.ZScores import *
 from Statistics.Correlation import *
 from Statistics.Quartiles import *
 from Statistics.MarginError import marginErr
+from Statistics.SystematicSampling import systematic_sampling
 
 
 class Statistics(Calculator):
@@ -69,4 +70,8 @@ class Statistics(Calculator):
 
     def mErr(self,data):
         self.result = marginErr(data)
+        return self.result
+
+    def sys_samp(self,data):
+        self.result = systematic_sampling(data)
         return self.result

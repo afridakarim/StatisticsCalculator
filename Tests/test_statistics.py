@@ -10,7 +10,7 @@ from Statistics.ZScores import zValues
 from Statistics.Correlation import correlationCoefficient
 from Statistics.Quartiles import *
 from Statistics.MarginError import marginErr
-import pprint
+from Statistics.SystematicSampling import systematic_sampling
 
 class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
@@ -82,23 +82,32 @@ class MyTestCase(unittest.TestCase):
         for i in result:
             Result.append(i)
 
-    def quartiles(self):
+    def test_quartiles(self):
         q1 = self.statistics.quart1(self.testData0)
-        self.assertEqual(q1, 60.056499999999995)
+        self.assertEqual(q1, 0.7525000000000001)
 
         q2 = self.statistics.quart2(self.testData0)
-        self.assertEqual(q2, 73.8845)
+        self.assertEqual(q2, 1.91)
 
         q3 = self.statistics.quart3(self.testData0)
-        self.assertEqual(q3, 80.88450000000001)
+        self.assertEqual(q3, 33.25)
 
-    def marginErr(self):
+    def test_marginErr(self):
         resultList = []
         result = self.statistics.mErr(self.testData0)
         for i in result:
             resultList.append(i)
         if resultList == result:
             self.assertTrue(True)
+
+    def test_systemSamp(self):
+        resultList = []
+        result = self.statistics.sys_samp(self.testData0)
+        for i in result:
+            resultList.append(i)
+        if resultList == result:
+            self.assertTrue(True)
+
 
 
 
