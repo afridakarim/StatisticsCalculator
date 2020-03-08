@@ -108,6 +108,10 @@ class MyTestCase(unittest.TestCase):
         if resultList == result:
             self.assertTrue(True)
 
+    def test_skew(self):
+        skewness = self.statistics.skewness(self.testData0)
+        self.assertEqual(skewness, 0.632588488248329)
+
 
 
 

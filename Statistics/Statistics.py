@@ -10,6 +10,7 @@ from Statistics.Correlation import *
 from Statistics.Quartiles import *
 from Statistics.MarginError import marginErr
 from Statistics.SystematicSampling import systematic_sampling
+from Statistics.Skewness import skewness
 
 
 class Statistics(Calculator):
@@ -74,4 +75,7 @@ class Statistics(Calculator):
 
     def sys_samp(self,data):
         self.result = systematic_sampling(data)
+        return self.result
+    def skewness(self,data):
+        self.result = skewness(data)
         return self.result
