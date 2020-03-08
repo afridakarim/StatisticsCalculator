@@ -1,13 +1,18 @@
-from scipy.stats import sem, t
-from Statistics.Mean import mean
+from statistics import mean
+from Statistics.StandardDev import StdDevSample
+from Statistics.ZScores import zScores
+from Statistics.ZScores import zValues
 
-confidence = 0.95
 
 def c_i(data):
     n = len(data)
-    m = mean(data)
-    stdErr = sem(data)
-    h = stdErr * t.ppf((1 + confidence) / 2, n - 1)
-    start = m - h
-    end = m + h
-    return start, end
+    List = []
+    std = StdDevSample(data)
+    mu = mean(data)
+    z_list = zScores(zValues(data))
+    stdErr = std / n
+    for i in z_list:
+        lesser = mu - i * stdErr
+        greater = mu + i * stdErr
+        List.append([lesser, greater])
+    return List

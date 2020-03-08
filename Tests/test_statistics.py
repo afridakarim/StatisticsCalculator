@@ -11,6 +11,7 @@ from Statistics.Correlation import *
 from Statistics.Quartiles import *
 from Statistics.MarginError import marginErr
 from Statistics.SystematicSampling import systematic_sampling
+from Statistics.SampleSize import *
 
 
 class MyTestCase(unittest.TestCase):
@@ -125,6 +126,36 @@ class MyTestCase(unittest.TestCase):
 
         if c_i_result == result:
             self.assertTrue(True)
+
+    def test_cochran(self):
+        cochranResult = []
+        result = self.statistics.cochran(self.testData0)
+        for i in result:
+            cochranResult.append(i)
+
+        if cochranResult == result:
+            self.assertTrue(True)
+
+    def test_yes_std(self):
+        with_std_Result = []
+        result = self.statistics.yes_std(self.testData0)
+        for i in result:
+            with_std_Result.append(i)
+
+        if with_std_Result == result:
+            self.assertTrue(True)
+
+    def test_no_std(self):
+        without_std_Result = []
+        result = self.statistics.no_std(self.testData0)
+        for i in result:
+            without_std_Result.append(i)
+
+        if without_std_Result == result:
+            self.assertTrue(True)
+
+
+
 
 
 

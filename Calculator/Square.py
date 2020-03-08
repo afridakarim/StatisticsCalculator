@@ -1,2 +1,2 @@
-def square(s):
-    return s**s
+def square(a):
+    return a**a

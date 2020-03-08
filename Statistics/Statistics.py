@@ -13,6 +13,7 @@ from Statistics.SystematicSampling import systematic_sampling
 from Statistics.Skewness import skewness
 from Statistics.Correlation import *
 from Statistics.ConfidenceInterval import c_i
+from Statistics.SampleSize import *
 
 
 class Statistics(Calculator):
@@ -93,4 +94,16 @@ class Statistics(Calculator):
 
     def confidenceInterval(self, data):
         self.result = c_i(data)
+        return self.result
+
+    def cochran(self,data):
+        self.result = cochranSample(data)
+        return self.result
+
+    def yes_std(self,data):
+        self.result = sample_yes_std(data)
+        return self.result
+
+    def no_std(self,data):
+        self.result = sample_no_std(data)
         return self.result
