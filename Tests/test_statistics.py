@@ -7,10 +7,11 @@ from Statistics.StandardDev import *
 from Statistics.Variance import *
 from Statistics.MeanAbsDev import *
 from Statistics.ZScores import zValues
-from Statistics.Correlation import correlationCoefficient
+from Statistics.Correlation import *
 from Statistics.Quartiles import *
 from Statistics.MarginError import marginErr
 from Statistics.SystematicSampling import systematic_sampling
+
 
 class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
@@ -62,8 +63,12 @@ class MyTestCase(unittest.TestCase):
         m_a_d = self.statistics.meanAbsDev(self.testData0)
         self.assertEqual(m_a_d, 17.231250000000003)
 
-    def test_corr_coeff(self):
-        coeff = self.statistics.correlation_coeff(self.testData0)
+    def test_sample_corr_coeff(self):
+        coeff = self.statistics.sample_correlation_coeff(self.testData0)
+        self.assertEqual(coeff,  0.9302765081681367)
+
+    def test_pop_corr_coeff(self):
+        coeff = self.statistics.pop_correlation_coeff(self.testData0)
         self.assertEqual(coeff,  0.9302765081681367)
 
     def test_z_values(self, mainResult=None):

@@ -11,6 +11,7 @@ from Statistics.Quartiles import *
 from Statistics.MarginError import marginErr
 from Statistics.SystematicSampling import systematic_sampling
 from Statistics.Skewness import skewness
+from Statistics.Correlation import *
 
 
 class Statistics(Calculator):
@@ -26,56 +27,65 @@ class Statistics(Calculator):
         self.result = mode(data)
         return self.result
 
-    def stdDevPop(self,data):
+    def stdDevPop(self, data):
         self.result = StdDevPop(data)
         return self.result
-    def stdDevSample(self,data):
+
+    def stdDevSample(self, data):
         self.result = StdDevSample(data)
         return self.result
 
-    def sampleVar(self,data):
+    def sampleVar(self, data):
         self.result = sampleVar(data)
         return self.result
-    def popVar(self,data):
+
+    def popVar(self, data):
         self.result = popVar(data)
         return self.result
 
-    def meanDev(self,data):
+    def meanDev(self, data):
         self.result = meanDev(data)
         return self.result
 
-    def meanAbsDev(self,data):
+    def meanAbsDev(self, data):
         self.result = meanAbsDev(data)
         return self.result
 
-    def zValues(self,data):
+    def zValues(self, data):
         self.result = zValues(data)
         return self.result
+
     def zScores(self, data):
         self.result = zScores(self.zValues(data))
         return self.result
 
-    def correlation_coeff(self, data):
-        self.result = correlationCoefficient(data)
+    def sample_correlation_coeff(self, data):
+        self.result = sampleCorrelation(data)
+        return self.result
+    def pop_correlation_coeff(self, data):
+        self.result = populationCorrelation(data)
         return self.result
 
     def quart1(self, data):
         self.result = qrt1(data)
         return self.result
+
     def quart2(self, data):
         self.result = qrt2(data)
         return self.result
+
     def quart3(self, data):
         self.result = qrt3(data)
         return self.result
 
-    def mErr(self,data):
+    def mErr(self, data):
         self.result = marginErr(data)
         return self.result
 
-    def sys_samp(self,data):
+    def sys_samp(self, data):
         self.result = systematic_sampling(data)
         return self.result
-    def skewness(self,data):
+
+    def skewness(self, data):
         self.result = skewness(data)
         return self.result
