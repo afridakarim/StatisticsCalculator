@@ -12,6 +12,7 @@ from Statistics.MarginError import marginErr
 from Statistics.SystematicSampling import systematic_sampling
 from Statistics.Skewness import skewness
 from Statistics.Correlation import *
+from Statistics.ConfidenceInterval import c_i
 
 
 class Statistics(Calculator):
@@ -88,4 +89,8 @@ class Statistics(Calculator):
 
     def skewness(self, data):
         self.result = skewness(data)
+        return self.result
+
+    def confidenceInterval(self, data):
+        self.result = c_i(data)
         return self.result

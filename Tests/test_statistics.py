@@ -117,6 +117,15 @@ class MyTestCase(unittest.TestCase):
         skewness = self.statistics.skewness(self.testData0)
         self.assertEqual(skewness, 0.632588488248329)
 
+    def test_confidence_interval(self):
+        c_i_result = []
+        result = self.statistics.confidenceInterval(self.testData0)
+        for i in result:
+            c_i_result.append(i)
+
+        if c_i_result == result:
+            self.assertTrue(True)
+
 
 
 
