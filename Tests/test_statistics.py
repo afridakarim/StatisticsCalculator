@@ -42,19 +42,19 @@ class MyTestCase(unittest.TestCase):
 
     def test_stdDevSample_calculator(self):
         stdDevSample = self.statistics.stdDevSample(self.testData0)
-        self.assertEqual(stdDevSample, 6.397178746938636e+24)
+        self.assertEqual(stdDevSample, 19.375147682721614)
 
     def test_stdDevPop_calculator(self):
         stdDevPop = self.statistics.stdDevPop(self.testData0)
-        self.assertEqual(stdDevPop, 1.7680868017026143e+24)
+        self.assertEqual(stdDevPop,  5.355007926775957)
 
     def test_sampleVar_calculator(self):
         sampleVar = self.statistics.sampleVar(self.testData0)
-        self.assertEqual(sampleVar,2529264467575.235)
+        self.assertEqual(sampleVar,4.4017209910126756)
 
     def test_popVar_calculator(self):
         popVar = self.statistics.popVar(self.testData0)
-        self.assertEqual(popVar, 1329694251210.6362)
+        self.assertEqual(popVar, 2.31408900580249)
 
     def test_MD_calculator(self):
         m_d = self.statistics.meanDev(self.testData0)

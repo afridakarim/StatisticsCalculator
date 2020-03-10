@@ -1,5 +1,5 @@
 from scipy import stats
-from Calculator.Multiplication import product
+from Calculator.product import product
 from Calculator.Square import square
 from Calculator.Division import division
 from Statistics.ZScores import *
