@@ -1,25 +1,39 @@
 import unittest
 
 from Calculator.Calculator import Calculator
-from CsvReader.CsvReader import CsvReader
 
 
 class MyTestCase(unittest.TestCase):
-    def setUp(self) -> None:
+
+    def setUp(self):
         self.calculator = Calculator()
 
     def test_instantiate_calculator(self):
         self.assertIsInstance(self.calculator, Calculator)
 
-    def test_subtraction(self):
-        test_data = CsvReader("Tests/Data/subtraction.csv").data
-        for row in test_data:
-            result = float(row['Result'])
-            self.assertEqual(self.calculator.subtract(row['Value 1'], row['Value 2']), result)
-            self.assertEqual(self.calculator.result, result)
+    def test_calculator_return_sum(self):
+        result = self.calculator.add(2, 2)
+        self.assertEqual(4, result)
 
-    def test_results_property(self):
-        self.assertEqual(self.calculator.result, 0)
+    def test_calculator_return_difference(self):
+        result = self.calculator.subtract(2, 2)
+        self.assertEqual(0, result)
+
+    def test_calculator_return_product (self):
+        result = self.calculator.product(2,2)
+        self.assertEqual(4,result)
+
+    def test_calculator_return_division (self):
+        result = self.calculator.division(2,2)
+        self.assertEqual(1,result)
+
+    def test_calculator_return_square (self):
+        result = self.calculator.square(2)
+        self.assertEqual(4,result)
+
+    def test_calculator_return_SquareRoot(self):
+        result = self.calculator.sqrt(4)
+        self.assertEqual(2, result)
 
 
 if __name__ == '__main__':
